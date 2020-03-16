@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>
+            Current Location
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="19" [minZoom]="17" [streetViewControl]="false" >
+        <agm-marker
+                [latitude]="lat"
+                [longitude]="lng"
+                [agmFitBounds]="true"
+                (markerClick)="onMarkerClick()"
+        ></agm-marker>
+
+      <!--<agm-marker
+              *ngFor="let location of locations"
+              [latitude]="location.latitude"
+              [longitude]="location.longitude"
+              [agmFitBounds]="true"></agm-marker>
+              -->
+    </agm-map>
+</ion-content>
